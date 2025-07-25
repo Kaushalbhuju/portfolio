@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Senior Django Developer & Designer</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6c63ff;
+            --primary-dark: #564fd8;
+            --secondary-color: #1e1e2d;
+            --dark-color: #121218;
+            --darker-color: #0a0a0e;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --dark-gray: #2d2d3a;
+            --accent-color: #00cf92;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-color);
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .navbar {
+            background-color: var(--darker-color);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--darker-color) 0%, var(--secondary-color) 100%);
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 60px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background-color: var(--darker-color);
+        }
+        
+        .section-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .skill-card {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-bottom: 30px;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(108, 99, 255, 0.3);
+        }
+        
+        .skill-icon {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .portfolio-img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .portfolio-item:hover .portfolio-img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(18, 18, 24, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-category {
+            display: inline-block;
+            padding: 6px 18px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .testimonial-card {
+            background: var(--secondary-color);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 5px solid rgba(108, 99, 255, 0.2);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        footer {
+            background-color: var(--darker-color);
+            color: white;
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            color: white;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+            border-radius: 5px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--dark-gray);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+        
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .timeline-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-text {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .tech-item {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            background-color: var(--secondary-color);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 0 0 0.25rem rgba(108, 99, 255, 0.25);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+        }
+        
+        .filter-button {
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 500;
+            margin: 5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .filter-button:hover, .filter-button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .badge-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.05;
+            border-radius: 50%;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            top: -150px;
+            right: -150px;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent-color);
+            bottom: -100px;
+            left: -100px;
+        }
+        
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: white;
+            top: 30%;
+            left: 20%;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">YourName</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h6 class="text-primary mb-4"><span class="badge bg-primary">PROFESSIONAL</span> SENIOR DEVELOPER & DESIGNER</h6>
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">YourName</span></h1>
+                    <h2 class="hero-subtitle">I build exceptional digital experiences with <span class="highlight">Django</span> and design</h2>
+                    <p class="mb-4">With 8+ years of experience, I specialize in creating high-performance web applications and stunning visual designs that drive business results.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#portfolio" class="btn btn-primary">
+                            <i class="fas fa-eye me-2"></i>View My Work
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Hire Me
+                        </a>
+                    </div>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="d-flex me-4">
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning me-1"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <span>Rated 5.0 by 50+ clients</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x600" alt="Profile Image" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Me</h2>
+                    <h3 class="mb-4">Professional <span class="highlight">Django Developer</span> & <span class="highlight">Designer</span></h3>
+                    <p>I'm a full-stack developer with deep expertise in Django, Python, and modern web technologies, combined with professional design skills. My unique combination of technical and creative abilities allows me to create complete digital solutions from concept to deployment.</p>
+                    <p>With experience leading teams and delivering complex projects for Fortune 500 companies and startups alike, I bring both technical excellence and strategic thinking to every engagement.</p>
+                    
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="d-flex mb-4">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-award fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">8+ Years</h5>
+                                    <p class="mb-0 text-muted">Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex mb-4">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-project-diagram fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">120+</h5>
+                                    <p class="mb-0 text-muted">Projects Completed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex mb-4">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-users fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">50+</h5>
+                                    <p class="mb-0 text-muted">Clients Worldwide</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex mb-4">
+                                <div class="me-3 text-primary">
+                                    <i class="fas fa-medal fa-2x"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">15+</h5>
+                                    <p class="mb-0 text-muted">Awards Won</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">My <span class="highlight">Expertise</span></h3>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Django Development</h5>
+                            <span>98%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Python Programming</h5>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>UI/UX Design</h5>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Frontend Development</h5>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Graphic Design</h5>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-secondary">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <h4>Django Development</h4>
+                        <p>Building robust, scalable web applications with Django framework and Python.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">Django</span>
+                            <span class="tech-item">DRF</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Django ORM</span>
+                            <span class="tech-item">Celery</span>
+                            <span class="tech-item">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Full-stack development with modern technologies and best practices.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">HTML5</span>
+                            <span class="tech-item">CSS3</span>
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">REST APIs</span>
+                            <span class="tech-item">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Design</h4>
+                        <p>Creating visually stunning and user-friendly interfaces and graphics.</p>
+                        <div class="tech-stack">
+                            <span class="tech-item">UI/UX</span>
+                            <span class="tech-item">Figma</span>
+                            <span class="tech-item">Adobe CC</span>
+                            <span class="tech-item">Branding</span>
+                            <span class="tech-item">Typography</span>
+                            <span class="tech-item">Illustration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Portfolio</span></h2>
+            <div class="text-center mb-5">
+                <button class="filter-button active" data-filter="all">All Projects</button>
+                <button class="filter-button" data-filter="django">Django</button>
+                <button class="filter-button" data-filter="web">Web Development</button>
+                <button class="filter-button" data-filter="design">Design</button>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item django">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/6c63ff/ffffff?text=Django+Project" alt="Django Project" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Django Development</span>
+                            <h4 class="text-white">Enterprise SaaS Platform</h4>
+                            <p>Scalable Django application with microservices architecture</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Django</span>
+                                <span class="tech-item">Celery</span>
+                                <span class="tech-item">React</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item web">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/00cf92/ffffff?text=Web+App" alt="Web App" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Web Development</span>
+                            <h4 class="text-white">E-commerce Solution</h4>
+                            <p>High-performance online store with custom CMS</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Django</span>
+                                <span class="tech-item">Stripe</span>
+                                <span class="tech-item">PostgreSQL</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/ff6584/ffffff?text=Design" alt="Design Project" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">UI/UX Design</span>
+                            <h4 class="text-white">Mobile Banking App</h4>
+                            <p>Complete UI/UX redesign for financial application</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Figma</span>
+                                <span class="tech-item">Prototyping</span>
+                                <span class="tech-item">User Testing</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item django">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/6c63ff/ffffff?text=Django+API" alt="Django API" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Django REST API</span>
+                            <h4 class="text-white">Healthcare Management System</h4>
+                            <p>HIPAA-compliant patient management platform</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Django REST</span>
+                                <span class="tech-item">JWT</span>
+                                <span class="tech-item">React Native</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item web">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/00cf92/ffffff?text=Web+Portal" alt="Web Portal" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Web Application</span>
+                            <h4 class="text-white">Project Management Tool</h4>
+                            <p>Real-time collaboration platform for teams</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Django</span>
+                                <span class="tech-item">WebSockets</span>
+                                <span class="tech-item">Vue.js</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 portfolio-item design">
+                    <div class="portfolio-img-container">
+                        <img src="https://via.placeholder.com/600x400/ff6584/ffffff?text=Branding" alt="Branding Project" class="img-fluid portfolio-img">
+                        <div class="portfolio-overlay">
+                            <span class="portfolio-category">Brand Identity</span>
+                            <h4 class="text-white">Tech Startup Branding</h4>
+                            <p>Complete visual identity for AI startup</p>
+                            <div class="tech-stack justify-content-center">
+                                <span class="tech-item">Logo Design</span>
+                                <span class="tech-item">Style Guide</span>
+                                <span class="tech-item">Packaging</span>
+                            </div>
+                            <a href="#" class="btn btn-primary mt-3">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">
+                    <i class="fas fa-book-open me-2"></i>View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section section-secondary">
+        <div class="container">
+            <h2 class="section-title">My <span class="highlight">Journey</span></h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Work <span class="highlight">Experience</span></h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2020 - Present</span>
+                                <h4 class="timeline-title">Lead Django Developer</h4>
+                                <p class="timeline-text">Tech Solutions Inc.</p>
+                                <p>Leading a team of 10 developers to build enterprise-grade Django applications for Fortune 500 clients. Architecting scalable solutions and implementing best practices.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Django</span>
+                                    <span class="tech-item">Microservices</span>
+                                    <span class="tech-item">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2017 - 2020</span>
+                                <h4 class="timeline-title">Senior Full-Stack Developer</h4>
+                                <p class="timeline-text">Digital Creative Agency</p>
+                                <p>Developed custom Django applications while also contributing to UI/UX design process. Bridged the gap between design and development teams.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Python</span>
+                                    <span class="tech-item">React</span>
+                                    <span class="tech-item">Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2015 - 2017</span>
+                                <h4 class="timeline-title">Web Developer & Designer</h4>
+                                <p class="timeline-text">Freelance</p>
+                                <p>Worked with startups and small businesses to create complete digital solutions from design to deployment.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Django</span>
+                                    <span class="tech-item">Photoshop</span>
+                                    <span class="tech-item">WordPress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Education & <span class="highlight">Certifications</span></h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2022</span>
+                                <h4 class="timeline-title">AWS Certified Developer</h4>
+                                <p class="timeline-text">Amazon Web Services</p>
+                                <p>Professional certification in cloud architecture and deployment of Django applications on AWS infrastructure.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2019</span>
+                                <h4 class="timeline-title">Advanced Django Masterclass</h4>
+                                <p class="timeline-text">Django Software Foundation</p>
+                                <p>In-depth training on advanced Django concepts including performance optimization and security best practices.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2013 - 2017</span>
+                                <h4 class="timeline-title">BSc in Computer Science</h4>
+                                <p class="timeline-text">University of Technology</p>
+                                <p>Specialized in software engineering and human-computer interaction with minor in graphic design.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Client <span class="highlight">Testimonials</span></h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/150" alt="Client 1" class="testimonial-img">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-center mb-4">"[Your Name] transformed our legacy system into a modern Django application that handles 10x more traffic with half the server costs. Their design skills also gave us a competitive edge in our market."</p>
+                        <h5 class="text-center mb-1">Sarah Johnson</h5>
+                        <p class="text-center text-muted">CTO, FinTech Solutions</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/150" alt="Client 2" class="testimonial-img">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-center mb-4">"Rare to find someone who can architect complex backend systems while also delivering pixel-perfect frontend implementations. [Your Name] exceeded our expectations on every level."</p>
+                        <h5 class="text-center mb-1">Michael Chen</h5>
+                        <p class="text-center text-muted">Product Director, SaaS Company</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="https://via.placeholder.com/150" alt="Client 3" class="testimonial-img">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="text-center mb-4">"The complete rebranding and web application [Your Name] delivered transformed our business. Our conversion rates increased by 300% and we've won two design awards for the new identity."</p>
+                        <h5 class="text-center mb-1">Emma Rodriguez</h5>
+                        <p class="text-center text-muted">CEO, E-commerce Brand</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-secondary">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h3 class="mb-4">Contact <span class="highlight">Information</span></h3>
+                    <p>I'm currently available for select freelance projects and full-time opportunities. Let's discuss how I can help bring your vision to life.</p>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h5>Location</h5>
+                            <p class="text-muted">San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h5>Email</h5>
+                            <p class="text-muted">contact@yourdomain.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p class="text-muted">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="mb-3">Follow Me</h5>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h3 class="text-white mb-4">YourName</h3>
+                    <p>Senior Django Developer & Designer creating high-performance web applications and exceptional user experiences.</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-muted">About</a></li>
+                        <li class="mb-2"><a href="#skills" class="text-muted">Skills</a></li>
+                        <li class="mb-2"><a href="#portfolio" class="text-muted">Portfolio</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-muted">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted">Django Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Web Application Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">UI/UX Design</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted">Technical Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="text-white mb-4">Newsletter</h4>
+                    <p class="text-muted">Subscribe to my newsletter for the latest updates and insights.</p>
+                    <form class="mt-3">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 YourName. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Designed & Developed by <a href="#" class="text-primary">YourName</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Update navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+        
+        // Portfolio filter
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to a server
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+        
+        // Update active nav link on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
