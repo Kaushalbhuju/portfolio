@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Kaushal Bhuju — Full-Stack Python Developer & Graphic Designer">
+  <title>Kaushal Bhuju | Full-Stack Developer & Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">KB<span class="accent">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#photography" class="nav-link">Photography</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-tagline">Hello, I'm</p>
+      <h1 class="hero-title">
+        Kaushal <span class="gradient-text">Bhuju</span>
+      </h1>
+      <p class="hero-subtitle">
+        <span class="typewriter" id="typewriter"></span>
+      </p>
+      <p class="hero-desc">
+        Full-stack Python developer &amp; graphic designer. I build robust backends, 
+        beautiful interfaces, and capture the world through my lens.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-social">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">01</span>
+        <h2>About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-image fade-in">
+          <div class="about-image-frame">
+            <div class="about-placeholder">
+              <i class="fas fa-user-astronaut"></i>
+            </div>
+          </div>
+        </div>
+        <div class="about-text fade-in">
+          <h3>Building the future, one line of code at a time</h3>
+          <p>
+            I'm a full-stack Python developer with over 5 years of experience designing and 
+            building scalable web applications. My passion lies at the intersection of robust 
+            backend architecture and pixel-perfect design.
+          </p>
+          <p>
+            When I'm not shipping code, you'll find me behind a camera exploring 
+            landscapes, or experimenting with new design tools. I believe the best 
+            products come from a blend of technical excellence and creative vision.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="25">0</span>
+              <span class="stat-label">Projects Delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="15">0</span>
+              <span class="stat-label">Countries Explored</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">02</span>
+        <h2>Skills &amp; Expertise</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category fade-in">
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <h3>Python &amp; Backend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>Python / Django</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>FastAPI / Flask</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>PostgreSQL / Redis</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Docker / Kubernetes</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category fade-in">
+          <div class="skill-icon"><i class="fas fa-code"></i></div>
+          <h3>Frontend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>React / Next.js</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>TypeScript</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Tailwind CSS</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Three.js</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category fade-in">
+          <div class="skill-icon"><i class="fas fa-palette"></i></div>
+          <h3>Design Tools</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <span>Figma</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="92"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Adobe Photoshop</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Adobe Illustrator</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <span>Blender</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">03</span>
+        <h2>Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-filter fade-in">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="design">Graphic Design</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card fade-in" data-category="fullstack">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #0c0e2b, #1a1040);">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Full-Stack</span>
+            <h3>WeatherViz Dashboard</h3>
+            <p>Real-time weather analytics platform with interactive maps, historical data visualization, and API-powered forecasts.</p>
+            <div class="project-tech">
+              <span>Django</span><span>React</span><span>D3.js</span><span>Redis</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in" data-category="fullstack">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #1a0e2e, #2d1b4e);">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Full-Stack</span>
+            <h3>Artisan Market</h3>
+            <p>E-commerce platform for independent creators featuring real-time inventory, payment processing, and a recommendation engine.</p>
+            <div class="project-tech">
+              <span>FastAPI</span><span>Next.js</span><span>Stripe</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in" data-category="design">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #0e1a2b, #1b2a40);">
+              <i class="fas fa-bezier-curve"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Graphic Design</span>
+            <h3>Nebula Brand Identity</h3>
+            <p>Complete brand identity for a space-tech startup including logo, typography, color system, and brand guidelines.</p>
+            <div class="project-tech">
+              <span>Figma</span><span>Illustrator</span><span>After Effects</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in" data-category="fullstack">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #0b1e1a, #14302a);">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Full-Stack</span>
+            <h3>CodePilot AI</h3>
+            <p>AI-powered code review assistant with real-time suggestions, linting, and automated PR analysis for enterprise teams.</p>
+            <div class="project-tech">
+              <span>Python</span><span>FastAPI</span><span>React</span><span>OpenAI</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in" data-category="design">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #2b1a0e, #40281b);">
+              <i class="fas fa-music"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Graphic Design</span>
+            <h3>Synthwave Festival</h3>
+            <p>Poster series and social media assets for a synthwave music festival with neon retro-futuristic aesthetics.</p>
+            <div class="project-tech">
+              <span>Photoshop</span><span>Illustrator</span><span>Premiere</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card fade-in" data-category="fullstack">
+          <div class="project-image">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #1a0e2b, #2b1040);">
+              <i class="fas fa-video"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-tag">Full-Stack</span>
+            <h3>StreamSync</h3>
+            <p>Real-time collaborative video streaming platform with chat, watch parties, and synchronized playback.</p>
+            <div class="project-tech">
+              <span>Django</span><span>WebSockets</span><span>React</span><span>FFmpeg</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section photography" id="photography">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">04</span>
+        <h2>Nature Photography</h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-desc fade-in">The world through my lens — landscapes, wildlife, and the quiet beauty of nature.</p>
+      <div class="photo-grid">
+        <div class="photo-item fade-in" style="grid-column: span 2; grid-row: span 2;">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #0d1b2a, #1b3a5c);">
+            <i class="fas fa-mountain"></i>
+            <span class="photo-label">Mountain Sunrise</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #1a3a2a, #2d5a40);">
+            <i class="fas fa-leaf"></i>
+            <span class="photo-label">Forest Canopy</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #2a1a3a, #4a2d6b);">
+            <i class="fas fa-water"></i>
+            <span class="photo-label">Northern Lights</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #3a2a1a, #5c4020);">
+            <i class="fas fa-tree"></i>
+            <span class="photo-label">Autumn Path</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #0a1a2a, #1a3a5c);">
+            <i class="fas fa-cloud"></i>
+            <span class="photo-label">Coastal Mist</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #1a2a1a, #2d4a2d);">
+            <i class="fas fa-feather"></i>
+            <span class="photo-label">Wildlife</span>
+          </div>
+        </div>
+        <div class="photo-item fade-in">
+          <div class="photo-placeholder" style="background: linear-gradient(135deg, #2a1a1a, #4a2d2d);">
+            <i class="fas fa-sun"></i>
+            <span class="photo-label">Desert Dunes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-number">05</span>
+        <h2>Get In Touch</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <h3>Let's create something amazing</h3>
+          <p>Whether you need a robust backend, a stunning design, or just want to chat — I'm always open to new opportunities.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>alex@example.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>San Francisco, CA</span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="contact-form fade-in" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" placeholder=" " required>
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder=" " required>
+              <label for="email">Your Email</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder=" ">
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 Kaushal Bhuju. Crafted with <span class="accent">&hearts;</span></p>
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.birds.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
